@@ -1,0 +1,44 @@
+body{
+  font-family: Arial;
+}
+
+.search-box{
+  padding: 8px;
+  font-size: medium;
+  
+}
+
+.add-button{
+  background-color: green;
+  color: white;
+  border-width: 0px;
+  font-size:medium;
+  cursor: pointer;
+}
+
+.date{
+  font-size: 15px;
+}
+
+.todo-list, .todo-input-grid{
+  display: grid;
+  grid-template-columns: 200px 150px 100px;
+  column-gap: 10px;
+  row-gap: 10px;
+  align-items: center;
+}
+
+.todo-input-grid{
+  margin-bottom: 10px;
+  align-items: stretch;
+}
+
+.delete-button{
+  background-color: rgb(147, 38, 38);
+  border-width: 0px;
+  padding: 10px;
+  color: white;
+  font-size: medium;
+  cursor: pointer;
+}
+

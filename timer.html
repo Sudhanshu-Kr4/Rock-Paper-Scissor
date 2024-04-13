@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body{ font-family: Arial, Helvetica, sans-serif;}
+
+      /*.container{
+        height: 100%;
+        width: 100%; 
+        display: grid;
+        grid-template-columns: 1fr 1fr; 
+      }
+      */
+      .time{
+        font-size: 100px;
+        flex: 1;
+        
+      }
+      .timer-container{
+
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        
+
+      }
+
+      .button-container{
+        display: grid;
+        grid-template-columns:100px 70px;
+        column-gap: 10px;
+      }
+      .buttons{
+        width: 80px;
+        height: 40px;
+        font-size: larger;
+        margin-left: 30px;
+        background-color: rgb(126, 220, 234);
+        border: none;
+        cursor: pointer;
+
+
+      }
+    </style>
+
+  </head>
+  <body>
+    <div class="container">
+      <div class="timer-container">
+        <div class="js-time-min time" >
+          00
+        </div>
+        <div class="time">
+          :
+        </div>
+        <div class="js-time-sec time">
+          00
+        </div>
+      <div> 
+    
+      <div class="button-container">  
+        <button class="js-start-button buttons">
+          Start
+        </button>
+        <button class="js-stop-button buttons">
+          Stop
+        </button>
+      </div>
+    </div>
+
+
+    <script>
+      const startButton = document.querySelector('.js-start-button');
+      startButton.addEventListener('click',() => {start()})
+      
+      
+      let setID ;
+      let num = 0;
+      let min = 1;
+      function start(){
+        setID = setInterval(function() {
+        if(num === 60){  
+          document.querySelector('.js-time-sec').innerHTML = '00';
+          document.querySelector('.js-time-min').innerHTML = `${min}`;
+          num = 1;
+          min++;
+        } else{
+          document.querySelector('.js-time-sec').innerHTML = num;
+          num++;
+        }
+        },1000)
+      }
+
+      
+      const stopButton = document.querySelector('.js-stop-button');
+      stopButton.addEventListener('click',() => {clearTimeout(setID);})
+
+      
+
+    </script>
+
+  </body>
+</html>

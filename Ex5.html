@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+  </head>
+  <body>
+    <button onclick="
+      number = number+'1';
+
+      ">
+      1
+    </button>
+
+    <button onclick="
+    number += '2';
+    ">
+      2
+    </button>
+
+    <button onclick="
+    number += '3';
+    ">
+      3
+    </button>
+
+    <button onclick="
+    calculation = Number(number); 
+    ">
+      +
+    </button>
+
+    <button onclick="
+    calculation = calculation+Number(number);
+    number='';
+    console.log(calculation);
+
+    ">
+      =
+    </button>
+
+
+    <script>
+      let calculation = 0;
+      let number = '';
+    </script>
+  </body>
+</html>
